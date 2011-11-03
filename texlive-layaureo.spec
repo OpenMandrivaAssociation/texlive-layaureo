@@ -1,3 +1,9 @@
+# revision 19087
+# category Package
+# catalog-ctan /macros/latex/contrib/layaureo
+# catalog-date 2006-12-30 10:59:01 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-layaureo
 Version:	20061230
 Release:	1
@@ -46,6 +52,7 @@ option called big which it forces typearea to become maximum.
 #- source
 %doc %{_texmfdistdir}/source/latex/layaureo/layaureo.dtx
 %doc %{_texmfdistdir}/source/latex/layaureo/layaureo.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -56,3 +63,5 @@ option called big which it forces typearea to become maximum.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
