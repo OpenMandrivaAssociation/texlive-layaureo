@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-layaureo
 Version:	20061230
-Release:	4
+Release:	5
 Summary:	A package to improve the A4 page layout
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/layaureo
