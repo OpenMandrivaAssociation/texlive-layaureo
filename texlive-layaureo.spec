@@ -5,7 +5,7 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-layaureo
-Version:	0.2
+Version:	20170414
 Release:	1
 Summary:	A package to improve the A4 page layout
 Group:		Publishing
