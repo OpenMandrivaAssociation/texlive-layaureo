@@ -3,7 +3,7 @@ Version:	19087
 Release:	2
 Summary:	A package to improve the A4 page layout
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/layaureo
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/layaureo
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.doc.r%{version}.tar.xz
