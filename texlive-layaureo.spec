@@ -1,49 +1,25 @@
-Name:		texlive-layaureo
-Version:	19087
-Release:	2
+%global tl_name layaureo
+%global tl_revision 19087
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2
+Release:	%{tl_revision}.1
 Summary:	A package to improve the A4 page layout
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/layaureo
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/layaureo.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package produces a wide page layout for documents that use
-A4 paper size. Moreover, LayAureo provides both a simple hook
-for leaving an empty space which is required if pages are
-bundled by a press binding use option binding=length), and an
-option called big which it forces typearea to become maximum.
+This package produces a wide page layout for documents that use A4 paper
+size. Moreover, LayAureo provides both a simple hook for leaving an
+empty space which is required if pages are bundled by a press binding
+(use option binding=length), and an option called big which it forces
+typearea to become maximum.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/layaureo/layaureo.sty
-%doc %{_texmfdistdir}/doc/latex/layaureo/README
-%doc %{_texmfdistdir}/doc/latex/layaureo/layaureo.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/layaureo/layaureo.dtx
-%doc %{_texmfdistdir}/source/latex/layaureo/layaureo.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
